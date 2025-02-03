@@ -8,7 +8,7 @@ app.use(express.json());
 
 const port = process.env.PORT || 8000;
 
-app.use('/api', userRoutes); // Use userRoutes directly
+app.use('/api', userRoutes); //
 
 connectDB();
 

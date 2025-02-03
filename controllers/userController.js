@@ -38,4 +38,18 @@ const signup = async (req, res) => {
     }
 };
 
-module.exports = { signup };
+const getUser = async function (req, res) {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: 'Server error',
+            error: error
+        });
+    }
+};
+
+module.exports = { signup, getUser };
+
